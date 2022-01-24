@@ -26,7 +26,7 @@ public class rainfall {
 
 	public static void main(String[] args) {	
 		//add our blocks to the blockchain ArrayList:
-		security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); //Setup Bouncey castle as a Security Provider
+		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider()); //Setup Bouncey castle as a Security Provider
 		
 		//Create wallets:
 		walletA = new Wallet();
