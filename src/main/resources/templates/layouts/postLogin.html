@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${title}">CST-323 Cloud Computing</title>
+<style>
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+</style>
+</head>
+<body>
+	<div th:fragment="header">
+<!--		<img th:src="@{/images/LBanner.jpg}" style="position: fixed; top: 0%; left: 0%; width:17%; height:100vh"/>
+		<img th:src="@{/images/RBanner.jpg}" style="position: fixed; top: 0%; right: 0%; width:17%; height:100vh"/>-->
+		<div align="center">
+	
+		</div>
+		<div class="bs-example">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar bg-dark">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="#">Cloud Computing</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/addProduct">Create Products</a>
+       
+      </ul>
+      <form class="d-flex">
+        <button class="btn btn-outline-danger"><a style="color: inherit; text-decoration: none;" href="/login/">Sign Out</a></button>
+      </form>
+    </div>
+  </div>
+</nav>
+		</div>
+	</div>
+	<!--Common Footer Fragment-->
+	<div th:fragment="footer">
+		<h5 style="color: black; text-align:center; position:fixed; bottom:0; width: 65%;">Copyright 2021 Grand Canyon University</h5>
+	</div>
+</body>
+</html>

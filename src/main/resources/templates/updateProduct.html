@@ -1,0 +1,47 @@
+<!-- This is currently a filler page until we implement the pages 
+that come after logging in just to ensure our login functions are working-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/postLoginTemplate">
+<head>
+  <meta name="description" content="Webpage description goes here" />
+  <meta charset="utf-8">
+  <title>Update Product</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+  
+<div layout:fragment="content">
+	<form action="#" th:action="@{doEdit}" th:object="${productModel}" method="post">
+	<table>
+		<tr>
+			<!--Product name attribute of the product model with error checking-->
+			<input type='hidden' name='id' th:value="${productModel.ProductId}"></td>
+		</tr>
+		<tr>
+			<!--Product name attribute of the product model with error checking-->
+			<td>Product Number: </td><td><input type="text" th:field="*{ProductNumber}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('ProductNumber')}" th:errors="*{ProductNumber}">Number Error</h5></td>
+		</tr>
+		<tr>
+			<!--Product name attribute of the product model with error checking-->
+			<td>Price: </td><td><input type="text" th:field="*{ProductPrice}"></td><td><h5 style="color:red" th:if"{#fields.hasErrors('ProductPrice')}" th:errors="*{ProductPrice}">Price Error</h5></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input class="button center" type="submit" value="Submit" /></td>
+		</tr>
+	</table>
+	
+	<!--This is where all errors from the above form are displayed-->
+	<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+	<div th:each="err : ${#fields.errors('*')}">
+		<span style="color:red" th:text="${err}" class="fieldError"></span>
+	</div>
+	
+</form>
+</div>
+
+</body>
